@@ -1,0 +1,19 @@
+.slider {
+    background-color: red;
+    height: calc(100vh - 70vh);
+
+    .arrowsR {
+        position: absolute;
+        top: 20%;
+        right: 0;
+        font-size: 30px;
+    }
+
+    .arrowsL {
+        position: absolute;
+        top: 20%;
+        left: 0;
+        font-size: 30px;
+    }
+  
+}

@@ -1,0 +1,28 @@
+
+.nav {
+    height: 3rem;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 0 2rem;
+    text-decoration: none;
+}
+.nav__bar {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    text-decoration: none;
+
+    .li {
+        cursor: pointer;
+        width: 5rem;
+        padding: .5rem;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        align-items: center;
+   
+    }
+}
