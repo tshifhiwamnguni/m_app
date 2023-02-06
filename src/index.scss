@@ -4,8 +4,16 @@
 }
 
 :root {
-    --primary: red;
-}
+    --bg: #011032;
+    --gray50: #d8d8d8;
+    --gray100: rgb(35, 35, 35);
+    --gray150: #011032;
+    --white: #071e52;
+    --transition: 0.5s ease-in-out;
+    --orange100: #f58f37;
+    --orange150: #c96915;
+  }
+  
 
 .active {
     background-color: orange;

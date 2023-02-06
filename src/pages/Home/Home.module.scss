@@ -1,4 +1,35 @@
+.home {
+    height: calc(100vh - 8rem);
+    display: flex;
+    flex-direction: column;
+}
+.main {
+    flex: 1;
+    font-size: 30px;
+    display: flex;
+    padding: 1rem 4rem;
+    align-items: center;
+    text-align: center;
+    overflow-x: scroll !important;
+  }
 .buttons{
     display: flex;
+    align-items: center;
     justify-content: space-around;
+    padding: .5rem;
+}
+
+.txt_cen{
+    text-align: center;
+}
+.primary{
+    width: 20rem;
+    background-color: orange;
+    padding: 1rem;
+    align-items: center;
+    display: flex;
+    height: 4rem;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
 }

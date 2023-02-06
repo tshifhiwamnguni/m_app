@@ -6,7 +6,7 @@ import classes from './Layout.module.scss'
 
 function Layout() {
     return (
-        <div className='layout'>
+        <div className={classes.layout}>
             <Nav />
 
             <div className={classes.main}>

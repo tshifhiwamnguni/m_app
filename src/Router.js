@@ -9,6 +9,7 @@ import Layout from './components/Layout/Layout';
 import Profile from './pages/Profile/Profile';
 
 
+
 const Router = createBrowserRouter([
     {
       path: "/",
@@ -22,6 +23,7 @@ const Router = createBrowserRouter([
           path: "/profile",
           element: <Profile />,
         },
+       
    
       ],
     },
