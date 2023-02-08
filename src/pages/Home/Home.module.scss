@@ -10,26 +10,30 @@
     padding: 1rem 4rem;
     align-items: center;
     text-align: center;
-    overflow-x: scroll !important;
+    justify-content: space-evenly;
+   flex-direction: column;
+    margin-top: 4rem;
+
   }
 .buttons{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: .5rem;
+
+
 }
 
 .txt_cen{
     text-align: center;
 }
 .primary{
-    width: 20rem;
-    background-color: orange;
+    width: 40rem;
+    background-color: grey;
     padding: 1rem;
     align-items: center;
     display: flex;
-    height: 4rem;
+    color: white;
+    height: 10rem;
+    font-size: 60px;
     justify-content: center;
+    border-radius: .5rem;
     border: none;
     cursor: pointer;
 }

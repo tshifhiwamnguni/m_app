@@ -1,0 +1,78 @@
+.screen {
+  width: 90%;
+  text-align: center;
+  background-color: black;
+  margin: auto;
+  color: white;
+}
+
+td {
+  border: solid 2px black;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
+
+.seats {
+  border-collapse: separate;
+  border-spacing: 0 20px;
+
+}
+
+.seats_container {
+  display: inline-grid;
+  justify-content: center;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 0.2rem;
+  text-align: center;
+  align-items: center;
+padding:6rem;
+  background-color: aquamarine;
+}
+.greyed {
+  border: solid 1px black;
+  width: 120px;
+  height: 60px;
+  border-radius: 5px;
+  background-color: grey;
+  cursor: pointer;
+  align-items: center;
+}
+.block {
+  border: solid 1px black;
+  width: 100px;
+  height: 60px;
+  align-items: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.radius {
+  border-radius: 10px;
+}
+
+img {
+  width: fit-content;
+  border-radius: 0px 0px 0px 0px;
+  height: 304px;
+}
+
+
+
+.red {
+  display: flex;
+  justify-content: center;
+}
+
+.dateInput {
+  border-radius: 5px;
+  border: solid grey 1px;
+}

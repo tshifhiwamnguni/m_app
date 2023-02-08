@@ -1,6 +1,6 @@
 import axios from 'axios';
 // free weather API
-const URL = 'https://strapi-movie-app.onrender.com/api/cinemas?populate=*'
+const URL = 'https://strapi-movie-app.onrender.com/api/'
 const header = {
     headers: {
       Authorization:
@@ -8,7 +8,12 @@ const header = {
         
 }}
 
-export const fetchMovies = async () => {
-    const data  = await axios.get(URL,header);
+export const fetchCinemas = async () => {
+    const data  = await axios.get(URL+'cinemas?populate=*',header);
     return data;
+}
+
+export const fetchMovies = async () => {
+  const data  = await axios.get(URL+'movies?populate=*',header);
+  return data;
 }

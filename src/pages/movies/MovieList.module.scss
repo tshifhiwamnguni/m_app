@@ -1,0 +1,21 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  background-color: red;
+
+}
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15%;
+
+}
+.main_container{
+  padding: 1rem;
+}
+h1{
+  text-align: center;
+}
+

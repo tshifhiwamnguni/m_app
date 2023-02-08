@@ -7,7 +7,9 @@ import {
 import Home from './pages/Home/Home';
 import Layout from './components/Layout/Layout';
 import Profile from './pages/Profile/Profile';
-
+import CinemaList from './pages/cinemas/CinemaList';
+import MovieList from './pages/movies/MovieList';
+import Booking from './pages/booking/Booking'
 
 
 const Router = createBrowserRouter([
@@ -22,7 +24,19 @@ const Router = createBrowserRouter([
         {
           path: "/profile",
           element: <Profile />,
+        }, 
+        {
+          path: "/cinemaList",
+          element: <CinemaList />,
+        }, {
+          path: "/movieList",
+          element: <MovieList />,
         },
+        {
+          path: "/booking",
+          element: <Booking />,
+        },
+
        
    
       ],
