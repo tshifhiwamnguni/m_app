@@ -2,7 +2,7 @@ import React from 'react'
 
 import {
     createBrowserRouter,
-  
+
   } from "react-router-dom";
 import Home from './pages/Home/Home';
 import Layout from './components/Layout/Layout';
@@ -36,9 +36,6 @@ const Router = createBrowserRouter([
           path: "/booking",
           element: <Booking />,
         },
-
-       
-   
       ],
     },
   ]);

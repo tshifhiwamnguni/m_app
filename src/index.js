@@ -9,10 +9,7 @@ import Router from './Router'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
-   <RouterProvider
-    router={Router}
-  />
+   <RouterProvider router={Router}/>
 
 );
 
