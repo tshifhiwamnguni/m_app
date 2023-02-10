@@ -12,11 +12,11 @@ function MoviePlayCard(props) {
      localStorage.setItem('MPrice',  props.data.attributes.price)
      localStorage.setItem('MName',  props.data.attributes.title)
      localStorage.setItem('Image',  props.data.attributes.movieImage)
-      navigate('/booking')
+      navigate(`/movieDetails/${props.data.id}` )
     
    }
 
-  console.log("data ", props.data.attributes.genres.data);
+  // console.log("data", props.data.attributes.genres.data);
   return (
     <div>
       <div className={classes.movie} onClick={selectMovie}>

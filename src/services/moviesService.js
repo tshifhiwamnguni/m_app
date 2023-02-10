@@ -17,3 +17,8 @@ export const fetchMovies = async () => {
   const data  = await axios.get(URL+'movies?populate=*',header);
   return data;
 }
+
+export const fetchOneMovie = async (id) => {
+  const data  = await axios.get(URL+`movies/${id}?populate=*`,header);
+  return data;
+}

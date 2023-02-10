@@ -10,6 +10,7 @@ import Profile from './pages/Profile/Profile';
 import CinemaList from './pages/cinemas/CinemaList';
 import MovieList from './pages/movies/MovieList';
 import Booking from './pages/booking/Booking'
+import MovieDetails from './pages/MovieDetails/MovieDetails';
 
 
 const Router = createBrowserRouter([
@@ -31,6 +32,11 @@ const Router = createBrowserRouter([
         }, {
           path: "/movieList",
           element: <MovieList />,
+        },
+        ,
+        {
+          path: "/movieDetails/:id",
+          element: <MovieDetails />,
         },
         {
           path: "/booking",

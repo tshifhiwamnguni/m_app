@@ -28,9 +28,38 @@ function Booking() {
     naviage("../snackss");
   }
 
-  const seats = ["A1","A2","A3","A4","A5","A6","A7","A8","A9","A10",
-    "B1","B2","B3","B4","B5","B6","B7","B8","B9","B10",
-    "C1","C2","C3","C4","C5","C6","C7","C8","C9","C10",];
+  const seats = [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "A7",
+    "A8",
+    "A9",
+    "A10",
+    "B1",
+    "B2",
+    "B3",
+    "B4",
+    "B5",
+    "B6",
+    "B7",
+    "B8",
+    "B9",
+    "B10",
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7",
+    "C8",
+    "C9",
+    "C10",
+  ];
 
   let us = seats;
 
@@ -42,51 +71,59 @@ function Booking() {
   };
 
   return (
-    <>
-      <div className="mt-24">
-        <h1 className="text-center text-5xl font-bold mb-4">booking</h1>
-        <div className={classes.screen}>
-          <h2 className="text-center text-5xl font-bold mb-20">screen</h2>
-        </div>
-        <br />
-        <div className={classes.container}>
-          <div className={classes.seats_container}>
-            {us.map((element, index) => {
-              return (
-                <div
-                  className={
-                    bookedSeat.includes(element)
-                      ? `${classes.greyed}`
-                      : `${classes.block}`
-                  }
-                  key={element}
-                  onClick={() => {
-                    selectSeat(element);
-                  }}
-                >
-                  {element}
-                </div>
-              );
-            })}
+    <div className={classes.box}>
+      <div className={classes.content}>
+        <div>
+          <h1>select date and time</h1>
+          <div className={classes.dateBlock}>
+            14 <br />
+            tuesday
           </div>
-          <br />
-          <div className={classes.red}>
-            <input
-              type="datetime-local"
-              onChange={(e) => setBookingDate(e.target.value)}
-              value={bookingDate}
-              className="input dateInput  w-1/6"
-            />
+          <div className={classes.timeBlock}>
+          <div className={classes.time}>
+            20:00
+          </div>
           </div>
         </div>
-        <div className="flex mt-10">
-          <button className={`${classes.radius}`} onClick={book}>
-            {" "}
-            book{" "}
-          </button>
+        <div className="mt-24">
+          <h1>booking</h1>
+          <div className={classes.screen}>
+            <h2>screen</h2>
+          </div>
+          <div className={classes.main_container}>
+            <div className={classes.container}>
+              <div className={classes.seats_container}>
+                {us.map((element, index) => {
+                  return (
+                    <div
+                      className={
+                        bookedSeat.includes(element)
+                          ? `${classes.greyed}`
+                          : `${classes.block}`
+                      }
+                      key={element}
+                      onClick={() => {
+                        selectSeat(element);
+                      }}
+                    >
+                      <span>{element}</span>
+                    </div>
+                  );
+                })}
+              </div>
+              <br />
+            </div>
+          </div>
+
+          <div className="flex mt-10">
+            <button className={`${classes.radius}`} onClick={book}>
+              {" "}
+              book{" "}
+            </button>
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

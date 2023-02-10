@@ -22,7 +22,7 @@ function MovieList() {
 
   return (
     <div className={classes.main_container}>
-      <h1>list of cinemas</h1>
+      <h1>list of Movies</h1>
       {loader ? (
         <div className={classes.loader}>
           <Circles
