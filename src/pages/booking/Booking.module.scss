@@ -2,13 +2,17 @@
   align-items: center;
   display: flex;
   justify-content: center;
- 
+ padding: 2rem;
+ background-color: rgba(4, 4, 4, 0.764);
+ height: 100%;
 }
 
 .content{
-
-  padding: 5rem;
+  background-color: black;
+margin: 2rem;
+  padding: 2rem;
   width: 70%;
+  border-radius: 1rem;
 
 }
 
@@ -18,29 +22,34 @@
   background-color: black;
   margin: auto;
   color: white;
+
+  margin-top: 2rem;
+  width: 100%;
 }
 
 
 .seats_container {
+  background-color: whitesmoke;
   display: inline-grid;
   justify-content: center;
   grid-template-columns: repeat(10, 1fr);
   gap: 0.2rem;
   text-align: center;
   align-items: center;
-padding:6rem;
+ padding:2rem;
+ border-radius: 1rem;
 
 }
 .greyed {
   border: solid 1px black;
-  width: 120px;
+  width: 100px;
   height: 60px;
-  border-radius: 5px;
-  background-color: grey;
-  cursor: pointer;
   align-items: center;
   display: flex;
   justify-content:center;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: lime;
 }
 .block {
   border: solid 1px black;
@@ -90,14 +99,71 @@ span{
 }
 
 .timeBlock{
-  background-color: gray;
+  // background-color: gray;
+  background-color: whitesmoke;
+  border-radius:.2rem;
+  padding: .3rem;
+  display: flex;
 }
 .time{
-  border-radius:.4rem;
+  border-radius:.2rem;
   width: 10rem;
   height: 3rem;
   align-items: center;
   display: flex;
   justify-content: center;
   background-color: whitesmoke;
+  cursor: pointer;
+  &:hover{
+    background-color: white;
+   
+  }
+  
 }
+
+.selectedTime{
+  background-color: white;
+  border-bottom: solid 5px orange;
+  border-radius:.2rem;
+  width: 10rem;
+  height: 3rem;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  
+}
+
+.seats{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+
+
+.buttons_container{
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1rem;
+  color: white;
+}
+
+
+.buttons{
+  width: 7rem;
+  height: 3rem;
+  border-radius: .2rem;
+  border:none;
+  background-color: orange;
+  cursor: pointer;
+}
+.details{
+  display: flex;
+  gap: 1rem;
+
+}
+
+

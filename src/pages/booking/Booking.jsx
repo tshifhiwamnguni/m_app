@@ -5,7 +5,8 @@ import classes from "./Booking.module.scss";
 function Booking() {
   const naviage = useNavigate();
   const [bookedSeat, setBookedSeat] = useState([]);
-  const [isActive, setIsActive] = useState(false);
+  const [times, setTimes] = useState(["20:00", "30:00", "40:00", "50:00"]);
+  const [selectedTime, setSelectedTime] = useState([]);
   const [bookingDate, setBookingDate] = useState("");
 
   function selectSeat(props) {
@@ -16,7 +17,6 @@ function Booking() {
     } else {
       setBookedSeat((bookedSeat) => [...bookedSeat, props]);
       console.log("state: ", bookedSeat);
-      setIsActive(true);
     }
   }
 
@@ -63,12 +63,33 @@ function Booking() {
 
   let us = seats;
 
-  const handleDelete = (index) => {
+  function handleDelete(index) {
     console.log("delete ", index);
     const newElements = [...bookedSeat];
     newElements.splice(index, 1);
     setBookedSeat(newElements);
-  };
+  }
+
+  function handleDeleteTime(index) {
+    console.log("delete ", index);
+    const newElements = [...selectedTime];
+    newElements.splice(index, 1);
+    setSelectedTime(newElements);
+  }
+
+  function _selectedTimes(props) {
+    // if (selectedTime.includes(props)) {
+    //   console.log("booked");
+    //  selectedTime(props)
+    //   // handleDeleteTime(selectedTime.findIndex((seat) => seat === props));
+    // } else {
+    setSelectedTime(props);
+
+    // console.log("state: ", bookedSeat);
+
+    // }
+    console.log(selectedTime);
+  }
 
   return (
     <div className={classes.box}>
@@ -80,48 +101,83 @@ function Booking() {
             tuesday
           </div>
           <div className={classes.timeBlock}>
-          <div className={classes.time}>
-            20:00
-          </div>
+            {times.map((time, i) => {
+              return (
+                <div
+                  key={i}
+                  className={
+                    selectedTime.includes(time)
+                      ? ` ${classes.selectedTime} `
+                      : ` ${classes.time}`
+                  }
+                  onClick={() => {
+                    _selectedTimes(time);
+                  }}
+                >
+                  {time}
+                </div>
+              );
+            })}
+            <br />
           </div>
         </div>
-        <div className="mt-24">
-          <h1>booking</h1>
-          <div className={classes.screen}>
-            <h2>screen</h2>
-          </div>
-          <div className={classes.main_container}>
-            <div className={classes.container}>
-              <div className={classes.seats_container}>
-                {us.map((element, index) => {
-                  return (
-                    <div
-                      className={
-                        bookedSeat.includes(element)
-                          ? `${classes.greyed}`
-                          : `${classes.block}`
-                      }
-                      key={element}
-                      onClick={() => {
-                        selectSeat(element);
-                      }}
-                    >
-                      <span>{element}</span>
-                    </div>
-                  );
-                })}
+        {selectedTime == "" ? null : (
+          <div className={classes.seats}>
+            <div className={classes.screen}>
+              <h2>screen</h2>
+            </div>
+
+            <div className={classes.main_container}>
+              <div className={classes.container}>
+                <div className={classes.seats_container}>
+                  {us.map((element, index) => {
+                    return (
+                      <div
+                        className={
+                          bookedSeat.includes(element)
+                            ? `${classes.greyed}`
+                            : `${classes.block}`
+                        }
+                        key={index}
+                        onClick={() => {
+                          selectSeat(element);
+                        }}
+                      >
+                        <span>{element}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+                <br />
               </div>
-              <br />
+            </div>
+
+            <div className={classes.buttons_container}>
+              <div className={classes.details}>
+                <div className={classes.taken}>
+                  <div className={classes.greyed}/>
+                  <label htmlFor="">selected</label>
+                </div>
+                <div className={classes.taken}>
+                  <div className={classes.greyed}/>
+                  <label htmlFor="">free</label>
+                </div>
+                <div className={classes.taken}>
+                  <div className={classes.greyed}/>
+                  <label htmlFor="">free</label>
+                </div>
+              </div>
+              
+              <div>
+                <button className={`${classes.buttons}`} onClick={book}>
+                {" "}
+                book{" "}
+              </button>
+              </div>
+              
             </div>
           </div>
-
-          <div className="flex mt-10">
-            <button className={`${classes.radius}`} onClick={book}>
-              {" "}
-              book{" "}
-            </button>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );
