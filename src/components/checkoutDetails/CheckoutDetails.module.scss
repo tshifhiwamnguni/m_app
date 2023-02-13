@@ -30,6 +30,7 @@
     display: grid;
    grid-template-columns: 1fr 1fr;
    margin: 1rem 0;
+   align-items: center;
 }
 .price{
     display: grid;
@@ -46,4 +47,12 @@
 }
 .details{
     padding: 2rem;
+    background-color: #071e52;
+    border-radius: 1rem;
+    color: white;
+    font-size: 1rem;
+    height: fit-content;
+}
+.icon{
+    cursor: pointer;
 }

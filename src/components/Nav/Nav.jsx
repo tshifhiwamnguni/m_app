@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 function Nav() {
   return (
-    <div className={classes.nav}>
+    <div className={classes.nav} style={{boxShadow: '10px 10px 10px white'}}>
       <div>
         theSee
       </div>
