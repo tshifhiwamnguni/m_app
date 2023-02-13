@@ -14,6 +14,14 @@ function Nav() {
           <NavLink style={{ textDecoration: 'none', color: 'white'}} to={'/'}>home</NavLink>
         </li>
         <li className={classes.li}>
+          <NavLink style={{ textDecoration: 'none', color: 'white'}} to={'movieList'}>movies</NavLink>
+          
+        </li>
+        <li className={classes.li}>
+          <NavLink style={{ textDecoration: 'none', color: 'white'}} to={'plays'}>plays</NavLink>
+          
+        </li>
+        <li className={classes.li}>
           <NavLink style={{ textDecoration: 'none', color: 'white'}} to={'profile'}>profile</NavLink>
           
         </li>

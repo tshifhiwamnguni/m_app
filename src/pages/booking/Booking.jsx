@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./Booking.module.scss";
 
 function Booking() {
-  const naviage = useNavigate();
+  const navigate = useNavigate();
   const [bookedSeat, setBookedSeat] = useState([]);
   const [times, setTimes] = useState(["20:00", "30:00", "40:00", "50:00"]);
   const [selectedTime, setSelectedTime] = useState([]);
@@ -25,7 +25,7 @@ function Booking() {
     localStorage.setItem("seats", bookedSeat);
     localStorage.setItem("date", bookingDate);
     console.log("booked ", localStorage.getItem("seats"));
-    naviage("../snackss");
+    navigate("/checkout");
   }
 
   const seats = [
@@ -70,12 +70,12 @@ function Booking() {
     setBookedSeat(newElements);
   }
 
-  function handleDeleteTime(index) {
-    console.log("delete ", index);
-    const newElements = [...selectedTime];
-    newElements.splice(index, 1);
-    setSelectedTime(newElements);
-  }
+  // function handleDeleteTime(index) {
+  //   console.log("delete ", index);
+  //   const newElements = [...selectedTime];
+  //   newElements.splice(index, 1);
+  //   setSelectedTime(newElements);
+  // }
 
   function _selectedTimes(props) {
     // if (selectedTime.includes(props)) {
@@ -121,7 +121,7 @@ function Booking() {
             <br />
           </div>
         </div>
-        {selectedTime == "" ? null : (
+        {selectedTime === "" ? null : (
           <div className={classes.seats}>
             <div className={classes.screen}>
               <h2>screen</h2>
@@ -154,16 +154,16 @@ function Booking() {
 
             <div className={classes.buttons_container}>
               <div className={classes.details}>
-                <div className={classes.taken}>
+                <div className={''}>
                   <div className={classes.greyed}/>
                   <label htmlFor="">selected</label>
                 </div>
-                <div className={classes.taken}>
-                  <div className={classes.greyed}/>
+                <div className={''}>
+                  <div className={classes.free}/>
                   <label htmlFor="">free</label>
                 </div>
-                <div className={classes.taken}>
-                  <div className={classes.greyed}/>
+                <div className={''}>
+                  <div className={classes.taken}/>
                   <label htmlFor="">free</label>
                 </div>
               </div>

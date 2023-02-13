@@ -12,7 +12,7 @@ function Layout() {
             <div className={classes.main}>
                 <Outlet />
             </div>
-            <Footer />
+            {/* <Footer /> */}
 
         </div>
     )
