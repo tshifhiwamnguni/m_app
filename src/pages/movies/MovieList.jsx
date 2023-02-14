@@ -3,6 +3,7 @@ import classes from "./MovieList.module.scss";
 import { Circles } from "react-loader-spinner";
 import MoviePlayCard from '../../components/moviePlayCard/MoviePlayCard'
 import { fetchMovies } from "../../services/moviesService";
+import SkeletonCard from '../../components/MovieSkeletonCard/SkeletonCard';
 
 function MovieList() {
     const [loader, setLoader] = useState(true);
@@ -24,17 +25,12 @@ function MovieList() {
     <div className={classes.main_container}>
       <h1>list of Movies</h1>
       {loader ? (
-        <div className={classes.loader}>
-          <Circles
-            height="200"
-            width="200"
-            color="orange"
-            ariaLabel="circles-loading"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-          />
-        </div>
+        <div className={classes.container}>
+        {
+          [1,1,1,1,1,1,1,1,1,1].map((value, index) => (
+            <SkeletonCard key={index}/> 
+          ))}
+          </div>
       ) : (
         <div className={classes.container}>
           {movies.map((element, i) => {

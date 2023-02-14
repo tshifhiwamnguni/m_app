@@ -28,7 +28,7 @@ function MoviePlayCard(props) {
           <h3>{props.data.attributes.city}</h3>
           <div className={classes.genre}>
             {props.data.attributes.genres.data.map((el, i) => {
-              return <div key={i}> {el.attributes.name}</div>;
+              return <h3 key={i}> {el.attributes.name}</h3>;
             })}
           </div>
           <h3>{props.data.attributes.province}</h3>
