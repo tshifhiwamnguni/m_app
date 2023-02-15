@@ -32,7 +32,7 @@ function MoviePlayCard(props) {
             })}
           </div>
           <h3>{props.data.attributes.province}</h3>
-            {props.data.attributes.duration} mins
+            <h4>{props.data.attributes.duration} mins</h4>
         </div>
       </div>
     </div>

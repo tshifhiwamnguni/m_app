@@ -1,6 +1,5 @@
 import React from 'react'
 import classes from'./MovieSkeletonCard.module.scss'
-// import download from '../../assets/images/download.png'
 
 function SkeletonCard() {
   return (

@@ -27,10 +27,19 @@
       // font-weight: 200;
       // text-align: center;
     }
+    h1{
+      font-size: 1.6rem;
+    }
+    h4{
+      text-align: center;
+      font-weight: 100;
+    }
   }
 
   .genre{
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap:.5rem;
+  font-size: 12px;
   }

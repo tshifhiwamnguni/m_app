@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { AiOutlineMinusCircle } from "react-icons/ai";
+import CheckoutSkeleton from "../checkoutSkeleton/CheckoutSkeleton";
 import classes from "./CheckoutDetails.module.scss";
 
 function CheckoutDetails(props) {
@@ -60,18 +61,24 @@ function CheckoutDetails(props) {
       </div>
 
       <div>
-        <h1>{mName}</h1>
         {/* book details */}
-        <div className={classes.movie}>
+        {mName == null ? (
+          <CheckoutSkeleton />
+        ) : (
           <div>
-            <img src={mImage} alt="shoe" />
+            <h1>{mName}</h1>
+            <div className={classes.movie}>
+              <div>
+                <img src={mImage} alt="shoe" />
+              </div>
+              <div className={classes.movie_details}>
+                <span>{location}</span>
+                <span>date</span>
+                <span>time</span>
+              </div>
+            </div>
           </div>
-          <div className={classes.movie_details}>
-            <span>{location}</span>
-            <span>date</span>
-            <span>time</span>
-          </div>
-        </div>
+        )}
         {/* seats  */}
         <div>
           your seats
