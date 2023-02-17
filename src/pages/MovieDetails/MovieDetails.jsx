@@ -27,6 +27,11 @@ function MovieDetails() {
     localStorage.setItem("Image", movie.movieImage);
     navigate("/booking");
   }
+
+  function toReviews() { 
+    navigate("/reviews");
+  }
+   
   useEffect(() => {
     console.log(id);
     fetchOneMovie(id)
@@ -103,7 +108,7 @@ function MovieDetails() {
               <button className={classes.buttons} onClick={toBook}>
                 book
               </button>
-              <button className={classes.buttons}>review</button>
+              <button className={classes.buttons} onClick={toReviews}> review</button>
             </div>
              <div className={`${classes.trailer_container}`}>
             <iframe

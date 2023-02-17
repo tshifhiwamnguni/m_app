@@ -25,8 +25,8 @@ function Snacks({ snacksSelector }) {
     <div>
       {loader ? (
         <div className={classes.snacks}>
-          {[1, 1, 1, 1, 1, 1].map((snack) => {
-            return <SnackSkeleton />;
+          {[1, 1, 1, 1, 1, 1].map((snack, i) => {
+            return <SnackSkeleton  key={i}/>;
           })}
         </div>
       ) : (

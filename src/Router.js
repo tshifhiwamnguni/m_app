@@ -12,6 +12,7 @@ import MovieList from './pages/movies/MovieList';
 import Booking from './pages/booking/Booking'
 import MovieDetails from './pages/MovieDetails/MovieDetails';
 import Checkout from './pages/checkout/Checkout';
+import Reviews from './pages/reviews/Reviews';
 
 
 const Router = createBrowserRouter([
@@ -45,6 +46,9 @@ const Router = createBrowserRouter([
         }, {
           path: "/checkout",
           element: <Checkout />,
+        }, {
+          path: "/reviews",
+          element: <Reviews />,
         },
       ],
     },

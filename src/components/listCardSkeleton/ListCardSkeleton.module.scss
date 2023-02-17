@@ -1,0 +1,43 @@
+.skeleton {
+    animation: skeleton_loading 1s linear infinite alternate;
+  }
+  
+  @keyframes skeleton_loading {
+    0% {
+      background-color: hsl(200, 20%, 80%);
+    }
+    100% {
+      background-color: hsl(200, 20%, 95%);
+    }
+  }
+  
+  .skeleton_text {
+    
+    width: 70%;
+    height: 3rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+  }
+  .skeleton_name {
+    
+    width: 20%;
+    height: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+  }
+  .skeleton_star {
+    width: 40%;
+    height: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+  }
+.card{
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: .4rem;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    gap: .3rem;
+}
