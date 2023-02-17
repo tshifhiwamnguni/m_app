@@ -7,17 +7,17 @@
   color: black;
 }
 .form {
-  color: black;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: black;
+  width: 105%;
+  border-radius: .3rem;
 }
 .imp {
   width: 200%;
   height: 1.5rem;
-
-
-
 }
 
 .message {

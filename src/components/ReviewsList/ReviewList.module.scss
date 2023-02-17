@@ -8,6 +8,7 @@
 }
 .card{
     width: 100%;
+
     padding: 1rem;
     margin:  1rem 0rem;
     border: 1px solid black;
@@ -16,4 +17,10 @@
     flex-direction: column;
     background-color: whitesmoke;
     gap: .3rem;
+}
+
+.comment{
+    width: 52rem;
+    display: flex;
+    flex-direction: column;
 }
