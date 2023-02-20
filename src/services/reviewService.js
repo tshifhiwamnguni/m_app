@@ -14,8 +14,8 @@ export const postReview= async (_data) => {
 }
 
 
-export const getReview= async () => {
-    const data  = await axios.get(URL+'review-cinemas?filters[movie][id][$eq]=27&populate=*',header );
+export const getReview= async (id) => {
+    const data  = await axios.get(URL+`review-cinemas?filters[movie]=${id}&populate=*`,header );
     return data;
 }
 

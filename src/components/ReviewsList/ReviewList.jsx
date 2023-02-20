@@ -29,7 +29,9 @@ function ReviewList() {
 
   const [reviews, setReviews] = useState([initData]);
   useEffect(() => {
-    getReview()
+    const mId= localStorage.getItem("MId")
+
+    getReview(mId)
       .then((res) => {
         setIsLoading(true);
         console.log(res.data.data);
@@ -41,9 +43,9 @@ function ReviewList() {
       });
   }, []);
 
-  console.log(
-    reviews[0].attributes.users_permissions_user.data.attributes.firstname
-  );
+  // console.log(
+  //   reviews[0].attributes.users_permissions_user.data.attributes.firstname
+  // );
   return (
     <div className={classes.container}>
       <h1>Review List</h1>
@@ -51,6 +53,8 @@ function ReviewList() {
       {isLoading ? (
         <ListCardSkeleton />
       ) : (
+        <div>
+          {reviews.length >0 ?
         <div>
           {reviews.map((review, index) => (
             <div className={classes.card} key={index}>
@@ -64,8 +68,9 @@ function ReviewList() {
               </div>
             </div>
           ))}
-        </div>
-      )}
+        </div>:null}
+     </div> )
+      }
     </div>
   );
 }

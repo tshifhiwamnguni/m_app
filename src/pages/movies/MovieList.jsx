@@ -5,6 +5,8 @@ import MoviePlayCard from "../../components/moviePlayCard/MoviePlayCard";
 import { fetchMovies } from "../../services/moviesService";
 import SkeletonCard from "../../components/MovieSkeletonCard/SkeletonCard";
 import { AiOutlineSearch } from "react-icons/ai";
+import axios, { all } from "axios";
+
 function MovieList() {
   const initMovie = {
     data: {
@@ -38,18 +40,50 @@ function MovieList() {
         setLoader(false);
       });
   }, []);
-  console.log(movies);
 
-  console.log(searchValue);
-  const handleSearchChange = (event) => {
-    setSearchValue(event);
 
-    setFilteredArray(
-      movies.filter((item) =>
-        item.attributes.title.toLowerCase().includes(searchValue.toLowerCase())
+
+  useEffect(() => {
+ 
+    if(searchValue.length>=0){
+      setFilteredArray(
+        movies.filter((item) =>
+          item.attributes?.title.toLowerCase().includes(searchValue.toLowerCase())
+        )
+      );
+      setSuggestedOptions(filteredArray);
+    axios
+      .get(
+        `https://strapi-movie-app.onrender.com/api/movies?populate=*&filters[title][$containsi]=${searchValue}`,
+        {
+          headers: {
+            Authorization: 
+            "Bearer c03f2ff3dc732f216fff5ab4e4766d1fc88b820752ff5cc25d47cb4e5e867b67e01f3748cf3d6de665bad7c22f2c995d3f549073874e893ac037685ed2081be326647aac58ae737ccee9dde8d36d56c36f84fe34ecd6e2b42b27dff6662b6e959f420b117d0c3cddcdcf45263bfe82dc75fb854690842ed01bb88f960226d62e",
+          },
+        }
       )
-    );
-    setSuggestedOptions(filteredArray);
+      .then((movie) => {
+        setMovies(movie.data.data);
+  
+      })
+      .catch((error) => {})
+    }else{
+       fetchMovies()
+      .then((res) => {
+        setLoader(true);
+        setMovies(res.data.data);
+        console.log(movies);
+      })
+      .finally(() => {
+        setLoader(false);
+      });
+    }
+  }, [searchValue]);
+
+  const handleSearchChange = (event) => {
+
+      setSearchValue(event);
+
   };
 
   
@@ -66,14 +100,19 @@ function MovieList() {
               className={classes.search_input}
               value={searchValue}
               onChange={(e) => {
-                handleSearchChange(e.target.value);
+                setSearchValue(e.target.value);
               }}
             />
             <AiOutlineSearch className={classes.icon} />
           </div>
           <div className={classes.suggested}>
              {suggestedOptions.map((option, i) => (
-            <div key={i} onClick={()=> {setSearchValue(option.attributes.title) ; handleSearchChange(option.attributes.title)} }className={classes.opt}>{option.attributes.title}</div>
+            <div key={i} onClick={(e)=> {
+              // setSearchValue(option.attributes.title); 
+              handleSearchChange(option.attributes.title);}
+            
+            }
+              className={classes.opt}>{option.attributes.title}</div>
           ))}
           </div>
          
@@ -96,7 +135,7 @@ function MovieList() {
             </div>
           ) : (
             <div className={classes.container}>
-              {console.log(movies)}
+
               {movies.map((element, i) => {
                 return <MoviePlayCard key={i} data={element} />;
               })}
