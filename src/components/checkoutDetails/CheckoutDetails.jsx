@@ -30,6 +30,7 @@ function CheckoutDetails(props) {
     setmName(localStorage.getItem("MName"));
     setMImage(localStorage.getItem("Image"));
     setType(localStorage.getItem("type"));
+
   }, []);
 
   function handleDeleteSeat(data) {
@@ -73,8 +74,8 @@ function CheckoutDetails(props) {
               </div>
               <div className={classes.movie_details}>
                 <span>{location}</span>
-                <span>date</span>
-                <span>time</span>
+                <span>date {localStorage.getItem('day')} {localStorage.getItem('month')}</span>
+                <span>time {localStorage.getItem('selectedTimes')}</span>
               </div>
             </div>
           </div>
@@ -124,7 +125,7 @@ function CheckoutDetails(props) {
 
       <div className={classes.price}>
         <span></span>
-        <span>total R{price * seats.length + getSnackTotal()}</span>
+        <span>total R{(price * seats.length + getSnackTotal()).toFixed(2)}</span>
       </div>
       <div className={classes.price}>
         <span></span>

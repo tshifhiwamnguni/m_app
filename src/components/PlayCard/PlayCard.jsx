@@ -1,18 +1,18 @@
 import React from "react";
-import classes from "./MoviePlayCard.module.scss";
+import classes from "./PlayCard.module.scss";
 
 import { useNavigate } from "react-router-dom";
 
-function MoviePlayCard(props) {
+function PlayCard(props) {
   const navigate = useNavigate();
 
   function selectMovie() {
-    console.log(props);
+    console.log('play ' ,props);
       localStorage.setItem('MId', props.data.id)
      localStorage.setItem('MPrice',  props.data.attributes.price)
      localStorage.setItem('MName',  props.data.attributes.title)
-     localStorage.setItem('Image',  props.data.attributes.movieImage)
-      navigate(`/movieDetails/${props.data.id}` )
+     localStorage.setItem('Image',  props.data.attributes.showImage)
+      navigate(`/playDetails/${props.data.id}`)
     
    }
 
@@ -20,7 +20,7 @@ function MoviePlayCard(props) {
   return (
     <div>
       <div className={classes.movie} onClick={selectMovie}>
-        <img src={props.data.attributes?.movieImage} alt="show" />
+        <img src={props.data.attributes.showImage} alt="show" />
 
         <div>
           <h1>{props?.data.attributes.title}</h1>
@@ -39,4 +39,4 @@ function MoviePlayCard(props) {
   );
 }
 
-export default MoviePlayCard;
+export default PlayCard;

@@ -3,12 +3,12 @@
   display: flex;
   justify-content: center;
  padding: 2rem;
- background-color: rgba(4, 4, 4, 0.764);
+ background-color: #192433;
  height: 100%;
 }
 
 .content{
-  background-color: black;
+  background-color: #233247;
 margin: 2rem;
   padding: 2rem;
   width: 70%;
@@ -24,7 +24,8 @@ margin: 2rem;
   color: white;
 
   margin-top: 2rem;
-  width: 100%;
+  margin-bottom: 2rem;
+  width: 90%;
 }
 
 
@@ -88,7 +89,7 @@ span{
 
 
 .dateBlock {
-  border-radius: .4rem;
+  border-radius: .1rem;
   background-color: whitesmoke;
   color: black;
   width: 5rem;

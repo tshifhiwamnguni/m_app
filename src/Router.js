@@ -13,6 +13,8 @@ import Booking from './pages/booking/Booking'
 import MovieDetails from './pages/MovieDetails/MovieDetails';
 import Checkout from './pages/checkout/Checkout';
 import Reviews from './pages/reviews/Reviews';
+import Plays from './pages/plays/Plays';
+import PlayDetails from './pages/playDetails/PlayDetails';
 
 
 const Router = createBrowserRouter([
@@ -41,6 +43,10 @@ const Router = createBrowserRouter([
           element: <MovieDetails />,
         },
         {
+          path: "/playDetails/:id",
+          element: <PlayDetails />,
+        },
+        {
           path: "/booking",
           element: <Booking />,
         }, {
@@ -49,6 +55,10 @@ const Router = createBrowserRouter([
         }, {
           path: "/reviews",
           element: <Reviews />,
+        },
+        {
+          path: "/plays",
+          element: <Plays />,
         },
       ],
     },

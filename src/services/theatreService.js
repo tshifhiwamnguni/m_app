@@ -12,3 +12,13 @@ export const fetchTheatres = async () => {
     const data  = await axios.get(`${URL}/theatres?populate=*`,header);
     return data;
 }
+
+export const fetchPlays = async () => {
+  const data  = await axios.get(`${URL}/shows?populate=*`,header);
+  return data;
+}
+
+export const fetchOnePlay = async (id) => {
+  const data  = await axios.get(URL+`/shows/${id}?populate=*`,header);
+  return data;
+}

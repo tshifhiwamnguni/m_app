@@ -1,6 +1,6 @@
 .movie {
     padding: 1rem;
-    background-color: grey;
+    background-color: #233247;
     width: 270px;
     height: 370px;
     flex-shrink: 0;
@@ -11,6 +11,7 @@
   
     &:hover {
       transform: scale(1.03);
+      transition: (.3s ease-in-out);
       box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.75);
       -webkit-box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.75);
       -moz-box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.75);

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import classes from "./MovieDetails.module.scss";
+import classes from "./PlayDetails.module.scss";
 import { useNavigate, useParams } from "react-router-dom";
 
-import { fetchOneMovie } from "../../services/moviesService";
+import { fetchOnePlay } from "../../services/theatreService";
 import MovieDetailSkeleton from "../../components/MovieDetailSkeleton/MovieDetailSkeleton";
 
-function MovieDetails() {
+function PlayDetails() {
   const initMovieDetails = {
     description: "",
     duration: 0,
@@ -18,23 +18,26 @@ function MovieDetails() {
   let { id } = useParams();
   const [movie, setMovie] = useState(initMovieDetails);
   const [loader, setLoader] = useState(true);
+  const [image, setImage] = useState()
+  
   const navigate = useNavigate();
 
   function toBook() {
     localStorage.setItem("MId", id);
     localStorage.setItem("MPrice", movie.price);
     localStorage.setItem("MName", movie.title);
-    localStorage.setItem("Image", movie.movieImage);
+    
     navigate("/booking");
   }
 
-  function toReviews() { 
+  function toReviews() {
     navigate("/reviews");
   }
-   
+
   useEffect(() => {
+    setImage(localStorage.getItem('Image'))
     console.log(id);
-    fetchOneMovie(id)
+    fetchOnePlay(id)
       .then((data) => {
         setLoader(true);
         setMovie(data.data.data.attributes);
@@ -46,6 +49,8 @@ function MovieDetails() {
         setLoader(false);
       });
   }, []);
+
+  console.log(image);
 
   return (
     <div className={classes.container}>
@@ -78,44 +83,49 @@ function MovieDetails() {
                 {movie.duration} mins
               </div>
               <br />
-             {movie.description}
+              {movie.description}
               <br />
               <br />
               <span className={classes.details_headings}>Province</span> <br />
-              {movie?.cinema.data.attributes.province}
+              {movie?.theatre?.data.attributes?.province}
               <br />
               <br />
-              <span className={classes.details_headings}>city</span>{" "}
-              <br />
-              {movie?.cinema.data.attributes.city}
+              <span className={classes.details_headings}>city</span> <br />
+              {movie?.theatre?.data.attributes?.city}
               <br />
               <br />
               <span className={classes.details_headings}>suburb</span>
               <br />
-              {movie?.cinema.data.attributes.surbub}
+              {movie?.theatre?.data.attributes?.surbub}
             </div>
+
+
+
+
+
             <div className={classes.buttons_container}>
               <button className={classes.buttons} onClick={toBook}>
                 book
               </button>
-              <button className={classes.buttons} onClick={toReviews}> review</button>
+              <button className={classes.buttons} onClick={toReviews}>
+                {" "}
+                review
+              </button>
             </div>
-             <div className={`${classes.trailer_container}`}>
-            <iframe
-              width="720"
-              height="480"
-              src="https://www.youtube.com/embed/d9MyW72ELq0"
-              title="Avatar: The Way of Water | Official Trailer"
-              frameBorder="0"
-              allow="autoplay"
-            />
+
+            <div className={classes.trailer_container}>
+                <img src={image}  className={classes.img}/>
+
           </div>
-        </div>
-          </div>
+            
          
+          </div>
+
+
+        </div>
       )}
     </div>
   );
 }
 
-export default MovieDetails;
+export default PlayDetails;

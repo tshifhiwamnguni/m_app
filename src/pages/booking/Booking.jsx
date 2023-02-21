@@ -5,7 +5,7 @@ import classes from "./Booking.module.scss";
 function Booking() {
   const navigate = useNavigate();
   const [bookedSeat, setBookedSeat] = useState([]);
-  const [times, setTimes] = useState(["20:00", "30:00", "40:00", "50:00"]);
+  const [times, setTimes] = useState(["12:00", "14:30", "17:00", "19:30"]);
   const [date, setDate] = useState([{day : '14', month : 'january', year: 'february'}]);
   const [selectedTime, setSelectedTime] = useState([]);
   const [bookingDate, setBookingDate] = useState("");
@@ -75,7 +75,9 @@ function Booking() {
 
   function _selectedTimes(props) {
     setSelectedTime(props);
-  
+    localStorage.setItem("selectedTimes",props)
+  localStorage.setItem('day', date[0].day)
+  localStorage.setItem('month', date[0].month)
   }
 console.log(selectedTime);
   return (
