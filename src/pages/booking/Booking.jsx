@@ -108,7 +108,7 @@ console.log(selectedTime);
                 </div>
               );
             })}
-            <br />
+            <br/>
           </div>
         </div>
         {selectedTime.length === 0 ? null : (

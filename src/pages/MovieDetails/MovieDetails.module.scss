@@ -2,29 +2,26 @@
   padding: 10%;
 }
 .details {
-  padding-right: 7rem;
-  color: black;
-  h1 {
-    color: black;
-  }
+  padding: 2rem;
+
+ 
+ 
 }
 .details_container {
   width: 40rem;
-  height: 30rem;
+  height: 35rem;
   color: black;
-  background-color: whitesmoke;
-  padding: 2rem;
+  color: whitesmoke;
+  background-color: #233247;
   box-shadow: 0px 0px 19px 1px rgba(0, 0, 0, 0.7);
 }
 
 .trailer_container {
-  width: 45rem;
-  height: 30rem;
-  position: absolute;
-  top: 10%;
-  left: 45%;
+  width: 40rem;
+  height: 35rem;
 
-  box-shadow: 0px 0px 19px 1px rgba(0, 0, 0, 1);
+background-color: blue;
+
 }
 
 .details_headings {
@@ -36,11 +33,13 @@
   display: flex;
   justify-content: end;
   gap: 1rem;
+  padding: 2rem;
 }
 
 .buttons {
   width: 7rem;
   height: 2rem;
+  
   border-radius: 0.2rem;
   border: none;
   background-color: orange;
@@ -56,6 +55,12 @@
 .skeleton {
   animation: skeleton_loading 1s linear infinite alternate;
 }
+.controller{
+  display: flex ;
+
+ 
+}
+
 
 @keyframes skeleton_loading {
   0% {
@@ -63,5 +68,13 @@
   }
   100% {
     background-color: hsl(200, 20%, 95%);
+  }
+}
+.top{
+  background-color:#e6e8e6;
+  color: black;
+  padding:2rem;
+  h1{
+    color: black;
   }
 }

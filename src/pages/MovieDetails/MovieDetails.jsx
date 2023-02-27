@@ -28,10 +28,10 @@ function MovieDetails() {
     navigate("/booking");
   }
 
-  function toReviews() { 
+  function toReviews() {
     navigate("/reviews");
   }
-   
+
   useEffect(() => {
     console.log(id);
     fetchOneMovie(id)
@@ -50,6 +50,7 @@ function MovieDetails() {
   return (
     <div className={classes.container}>
       {loader ? (
+        <div className={classes.controller}>
         <div className={`${classes.details_container} `}>
           <div className={classes.details}>
             <MovieDetailSkeleton />
@@ -61,12 +62,12 @@ function MovieDetails() {
               id="cover-img"
             />
           </div>
+          </div>
         </div>
       ) : (
         <div className={classes.controller}>
           <div className={`${classes.details_container}`}>
-            <div className={classes.details}>
-              <div>
+            <div className={classes.top}>
                 <h1>{movie.title}</h1>
                 <br />
                 {movie.genres.data.map((element, id) => {
@@ -77,16 +78,17 @@ function MovieDetails() {
                 <br />
                 {movie.duration} mins
               </div>
+            <div className={`${classes.details} `}>
+              
               <br />
-             {movie.description}
+              {movie.description}
               <br />
               <br />
               <span className={classes.details_headings}>Province</span> <br />
               {movie?.cinema.data.attributes.province}
               <br />
               <br />
-              <span className={classes.details_headings}>city</span>{" "}
-              <br />
+              <span className={classes.details_headings}>city</span> <br />
               {movie?.cinema.data.attributes.city}
               <br />
               <br />
@@ -98,21 +100,24 @@ function MovieDetails() {
               <button className={classes.buttons} onClick={toBook}>
                 book
               </button>
-              <button className={classes.buttons} onClick={toReviews}> review</button>
+              <button className={classes.buttons} onClick={toReviews}>
+                {" "}
+                review
+              </button>
             </div>
-             <div className={`${classes.trailer_container}`}>
-            <iframe
-              width="720"
-              height="480"
-              src="https://www.youtube.com/embed/d9MyW72ELq0"
-              title="Avatar: The Way of Water | Official Trailer"
-              frameBorder="0"
-              allow="autoplay"
-            />
+            
           </div>
+          <div className={`${classes.trailer_container}`}>
+              <iframe
+                width="640"
+                height="560"
+                src="https://www.youtube.com/embed/d9MyW72ELq0"
+                title="Avatar: The Way of Water | Official Trailer"
+                frameBorder="0"
+                allow="autoplay"
+              />
+            </div>
         </div>
-          </div>
-         
       )}
     </div>
   );

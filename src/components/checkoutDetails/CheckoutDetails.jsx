@@ -39,6 +39,7 @@ function CheckoutDetails(props) {
     newElements.splice(index, 1);
     setSeats(newElements);
   }
+  
   function handleDeleteSnack(data) {
     let index = props.selectedSnacks.findIndex((seat) => seat.id === data.id);
     const newElements = [...props.selectedSnacks];
