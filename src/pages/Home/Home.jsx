@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import TheatreList from "../../components/theatres/TheatreList";
-// import CinemaList from "../../components/cinemas/CinemaList";
 import Slider from "../../components/Slider/Slider";
 import classes from "./Home.module.scss";
 import MoviePlayCard from "../../components/moviePlayCard/MoviePlayCard";
@@ -30,17 +28,10 @@ function Home() {
 
       <div className={classes.main}>
         {loader ? (
-          
           <div className={classes.main}>
-            {
-            [1,1,1,1,1,1,1].map((value, index) => (
-              
-                  <SkeletonCard  key={index}/>
-            
-              
-              
+            {[1, 1, 1, 1, 1, 1, 1].map((value, index) => (
+              <SkeletonCard key={index} />
             ))}
-            
           </div>
         ) : (
           <div className={classes.main}>

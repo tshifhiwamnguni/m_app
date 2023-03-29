@@ -1,5 +1,5 @@
 .movie {
-    padding: 1rem;
+    padding: .4rem;
     background-color: #233247;
     width: 270px;
     height: 370px;
@@ -8,6 +8,7 @@
     cursor: pointer;
     border-radius: .5rem;
     color: white;
+    z-index: 1000;
   
     &:hover {
       transform: scale(1.03);

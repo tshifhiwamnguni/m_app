@@ -1,18 +1,18 @@
 .home {
-  height: calc(100vh - 10rem);
+  height: calc(90vh);
   display: flex;
   flex-direction: column;
 }
 .main {
   flex: 1;
-  // font-size: 30px;
   display: flex;
-
   align-items: center;
   text-align: center;
   justify-content: space-evenly;
   overflow-x: scroll;
   gap: 0.5rem;
+  z-index: 1000;
+  
 }
 .buttons {
 }
